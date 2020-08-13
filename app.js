@@ -3,7 +3,7 @@ var express 	= require('express');
 var exSession 	= require('express-session');
 var bodyParser 	= require('body-parser');
 var login 		= require('./controller/login');
-//var home 		= require('./controller/home');
+var admin 		= require('./controller/admin');
 //var logout 		= require('./controller/logout');
 var app 		= express();
 
@@ -20,7 +20,9 @@ app.use(exSession({secret: 'my secret value', saveUninitialized: true, resave: f
 
 
  app.use('/login', login);
-//app.use('/home', home);
+ app.use('/admin', admin);
+ //app.use('/employee', employee);
+ //app.use('/logout', logout);
 
 
 

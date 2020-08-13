@@ -1,5 +1,5 @@
 var express 	= require('express');
-//var userModel 	= require.main.require('./models/user');
+var userModel 	= require.main.require('./models/user');
 var router 		= express.Router();
 
 router.get('/', function(req, res){
@@ -16,7 +16,7 @@ router.post('/', function(req, res){
 	userModel.validate(user, function(status){
 		if(status){
 			req.session.username = user.uname;
-			res.redirect('/home');
+			res.redirect('admin');
 		}else{
 			res.send('invalid username/password');
 		}
